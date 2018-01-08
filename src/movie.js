@@ -3,17 +3,20 @@ import PropTypes from 'prop-types'
 
 export default class Movie extends Component{
     static propTypes={
+        //#1 a prop type for every single prop
+        //#2 isrequired or defaultprop
+
           // An object taking on a particular shape
         movie: PropTypes.shape({
             title:PropTypes.string.isRequired,           
         }),
-        desc:PropTypes.string
+        // desc:PropTypes.string
     }
 
-    static defaultProps = {
-        desc:'description is not available'
+    // static defaultProps = {
+    //     desc:'description is not available'
 
-    }
+    // }
 
 
     render(){

@@ -3,33 +3,46 @@ import logo from './logo.svg';
 import './App.css';
 import Movie from './movie'
 
-const movies=[
-  {id:1, title:'super star',desc:'space movie'},
-    {id:2, title:'36th olufuia'},
-    {id:3, title:'world war 2'}
 
-
-
-]
 class App extends Component {
-
-  state={
-    input:'mei'
+  state ={
+    movies:[]
   }
 
-  updateInput = (event)=>{
-    this.setState({
-      input:event.target.value.trim()
-    })
+  async componentDidMount(){
+    try{
+      const res = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
+      const movies = await res.json()
+      console.log(movies)
+      this.setState({
+        movies:movies.results
+      })
+    }catch(e){
+      console.log(e)
+
+    }
+
   }
 
-  submit=()=>{
+  // state={
+  //   input:'mei'
+  // }
+
+  // updateInput = (event)=>{
+  //   this.setState({
+  //     input:event.target.value.trim()
+  //   })
+  // }
+
+  // submit=()=>{
    
-      console.log(this.text.value)
+  //     console.log(this.text.value)
   
-  }
+  // }
 
   render() {
+    console.log(this.state.movies)
+
     return (
       <div className="App">
         <header className="App-header">
@@ -38,7 +51,7 @@ class App extends Component {
           {/* <Welcome text="welcome to using props" toggle={this.state.toggle}/> */}
         </header>
 
-      {movies.map((movie) => <Movie key={movie.id} movie={movie} desc={movie.desc}></Movie>)}
+      {this.state.movies.map((movie) => <Movie key={movie.id} movie={movie} desc={movie.desc}></Movie>)}
 
         {/* <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
