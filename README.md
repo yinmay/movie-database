@@ -84,7 +84,7 @@ import {
 * create the movidetail.js and change the path to the specific movie
 * using the data by `setSate` to the movie
 
-###styled component
+### styled component
 `import styled from 'styled-components'`
 ```
 const MovieWrapper = styled.div`
