@@ -1,3 +1,7 @@
+
+
+grabing movies from api, generate new content, nice animation and allow us between pages
+
 ### using `create-react-app` to make the basic framework
 ### create the Movie component and add props on it
 ```
@@ -140,4 +144,8 @@ show or don't show
  {this.state.movie.title && <h1>hello</h1>}
  ```
 
- ###
+###
+* next.js
+* gatsby.js
+* meteor --build react app with a database
+
