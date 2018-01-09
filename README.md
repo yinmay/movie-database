@@ -84,4 +84,60 @@ import {
 * create the movidetail.js and change the path to the specific movie
 * using the data by `setSate` to the movie
 
-###
+###styled component
+`import styled from 'styled-components'`
+```
+const MovieWrapper = styled.div`
+    position:relative;
+    padding-top:50vh;
+    background-size:cover;
+    background: url(${props => props.backdrop}) no-repeat;
+
+`;
+
+const MovieInfo = styled.div`
+    background:white;
+    text-align:left;
+    padding:2rem 10%;
+    display:flex;
+    >div{
+        margin-left:20px;
+    }
+    img{
+        position:relative;
+        top:-5rem;
+    }
+`;
+```
+### react overdrive
+`import Overdrive from 'react-overdrive';`
+* add some animations to the movie posters
+
+### Purecomponent
+* normal component renders deeply checking 
+* Pure component just check the first level thing
+
+### inline conditionals
+* equal to `  {this.state.movie.title ? <h1>hi</h1>:<h1>hello</h1>}`
+
+one or the other type of situtation
+```
+    let detail = (
+      <h1>hi</h1>
+    );
+    if (this.state.movie.title) {
+      detail = (
+        <h1>hello</h1>
+      );
+    }
+
+```
+
+* if `this.state.movie.title` exist, then output the `<h1>hello</h1>`
+
+show or don't show 
+```
+ {this.state.movie.title && <h1>hello</h1>}
+ ```
+
+ ###
