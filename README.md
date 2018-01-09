@@ -72,7 +72,7 @@ Movie.propTypes = {
 };
 ```
 ### router 
-* `<Route path="" />`
+`<Route path="" /> <Link to='' />`
 ```
 import {
   BrowserRouter as Router,
@@ -80,4 +80,8 @@ import {
 } from 'react-router-dom';
 
 ```
+* two path, the id comes in from the path
+* create the movidetail.js and change the path to the specific movie
+* using the data by `setSate` to the movie
 
+###
